@@ -1,10 +1,10 @@
 //This is the main script to manage the counter 
 
-console.log("CIAO! QUESTO è counter");
 let count = 0;
-let add = document.querySelector("#add");
-let btnDecrease = document.getElementById('minus');
-let value = document.querySelector("#value");
+const add = document.querySelector("#add");
+const btnDecrease = document.getElementById('minus');
+const value = document.querySelector("#value");
+const resetBtn = document.querySelector("#reset");
 
 add.addEventListener("click", function () {
 		count += 1;
@@ -13,5 +13,10 @@ add.addEventListener("click", function () {
 
 btnDecrease.addEventListener("click", function () {
 	count -= 1;
+	value.textContent = count;
+});
+
+resetBtn.addEventListener("click", () => {
+	count = 0;
 	value.textContent = count;
 });
