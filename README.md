@@ -47,17 +47,17 @@ The application repository is structured as follows:
 ```
 counter-app-js/
   ├── index.html
-  ├── css/
+  ├── assets/css/
   │   └── styles.css
-  ├── js/
+  ├── assets/js/
   │   └── script.js
-  └── img/
+  └── assets/img/
 
  ```
 * index.html contains the HTML structure of the application.
 * css/styles.css contains the CSS styling of the application.
 * js/script.js contains the JavaScript code for the counter functionality.
-* img contains the svg icons.
+* img contains the icons.
 ---
 ## Contributions
 Contributions to improve this application are welcome. If you have suggestions, corrections, or new features to add, feel free to open a pull request in the repository.
