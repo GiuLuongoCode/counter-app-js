@@ -10,7 +10,7 @@
     <a href="https://github.com/joecarian/counter-app-js/issues">Request Feature</a>
 </h3>
 
-This is a simple counter application built using vanilla HTML, CSS, and JavaScript. The application allows users to increment, decrement, and reset a numeric value using interactive buttons. It also allows users to choose the increment value as well.
+This is a simple counter application built using HTML, CSS, and vanilla JavaScript. The application allows users to increment, decrement, and reset a numeric value using interactive buttons. It also allows users to choose the increment value as well.
 
 ----
 
