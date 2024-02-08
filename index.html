@@ -1,47 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="
 	This is a simple counter application built using HTML, CSS, and vanilla JavaScript. The application allows users to increment, decrement, and reset a numeric value using interactive buttons. 
-	It also allows users to choose the increment value as well.">
-	<meta property="og:title" content="Counter App Js"/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:image" content="assets/img/counter.png"/>
-	<meta property="og:description" content="This is a simple counter application"/>
-	<title>Counter App</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-	<link rel="shortcut icon" href="assets/img/counter.png" type="image/x-icon">
-</head>
-<body>
-    <div class="container">
-		<div class="container-title"><span><h1>Counter</h1></span></div>
-		 <div class="title-2"><h2 id="value">0</h2></div>
-		 <section class="bg-stars">
-		   <span class="star"></span>
-		   <span class="star"></span>
-		   <span class="star"></span>
-		   <span class="star"></span>
-		 </section>
-		 <div class="quantity">
-			<span>Increment by:</span>
-			<button id="minusIncrement">
-				 <svg fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
-					 <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#47484b" d="M20 12L4 12"></path>
-				   </svg>
-			   </button>
-			   <label id="incrementLabel">1</label>
-			   <button id="addIncrement">
-				   <svg fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
-					   <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#47484b" d="M12 4V20M20 12H4"></path>
-				   </svg>
-			   </button>
-		   </div> 
-		 <div class="btn-group" role="group" aria-label="Basic example" id="btn-group">
-		</div>
-	</div>
-	<script src="assets/js/app.js"></script>
-</body>
+	It also allows users to choose the increment value as well."
+    />
+    <meta property="og:title" content="Counter App Js" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/counter.png" />
+    <meta
+      property="og:description"
+      content="This is a simple counter application"
+    />
+    <title>Counter App</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/counter.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="quantity">
+      <span>Increment by:</span>
+      <button id="minusIncrement">
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          height="14"
+          width="14"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-width="2.5"
+            stroke="#47484b"
+            d="M20 12L4 12"
+          ></path>
+        </svg>
+      </button>
+      <label id="incrementLabel">1</label>
+      <button id="addIncrement">
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          height="14"
+          width="14"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-width="2.5"
+            stroke="#47484b"
+            d="M12 4V20M20 12H4"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>
