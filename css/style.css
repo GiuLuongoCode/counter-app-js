@@ -17,24 +17,15 @@ html, body {
   justify-content: center;
   align-items: center;
   padding: 2.2rem;
-  /* border: 2px solid #fff; */
   -webkit-box-shadow: rgba(0,212,255) 0px 0px 50px -15px;
   box-shadow: rgba(0,212,255) 0px 0px 50px -15px;
   overflow: hidden;
   z-index: +1;
 }
 
-/* Regole CSS per renderlo responsive */
 @media (max-width: 768px) {
   .container {
-    padding: 1rem; /* Riduci il padding per dispositivi mobili */
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    font-size: 14px;
-     /* Riduci la dimensione del testo per dispositivi mobili più piccoli */
+    padding: 1rem; 
   }
   .btn-group {
     display: flex;
@@ -42,12 +33,7 @@ html, body {
     justify-content: space-between;
     align-items: flex-start;
   }
-
 }
-
-
-
-/*--------header section-----------*/
 
 .container-title {
   font-size: 1.25rem;
@@ -123,9 +109,6 @@ html, body {
     opacity: 1;
   }
 }
-
-/*---------shooting stars-----------*/
-
 
 .bg-stars {
   position: absolute;
@@ -224,15 +207,8 @@ html, body {
   align-items: center;
 }
 
-.btn-group button {
-  margin-right: 10px; /* Aggiungi margine destro tra i pulsanti */
-}
-
-.btn-group button:last-child {
-  margin-right: 0; /* Rimuovi il margine destro dall'ultimo pulsante */
-}
-
 .btn {
+  margin-right: 10px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -292,7 +268,6 @@ strong {
 }
 
 .btn:hover #container-stars {
-  /* z-index: 1; */
   background-color: #212121;
 }
 
@@ -398,4 +373,50 @@ strong {
     transform: scale(0.75);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
+}
+.quantity {
+  height: 30px;
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 50px;
+  border: 1px solid #e5e5e5;
+  border-radius: 7px;
+    padding: 10px;
+}
+
+.quantity span {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-text-stroke: #fff 0.1rem;
+  letter-spacing: 0.2rem;
+  color: transparent;
+  margin: 7px;
+}
+
+.quantity label {
+  width: 20px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-text-stroke: #fff 0.1rem;
+  letter-spacing: 0.2rem;
+  color: transparent;
+}
+
+.quantity button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  outline: none;
+  padding-bottom: 2px;
+  background-color: transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 }
