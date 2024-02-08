@@ -1,6 +1,6 @@
 <h2 align="center">
     Counter App Js - v1.0 <br/>
-    <a href="https://counter-app-oecarian.netlify.app">Counter App Js</a>
+    <a href="https://counter-app-joecarian.netlify.app/">Counter App Js</a>
 </h2>
 
 <h3 align="center">
