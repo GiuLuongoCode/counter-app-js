@@ -2,7 +2,7 @@
 
 function createElemetHtml(elementType, params) {
   let element;
-  if (elementType == "svg") {
+  if (elementType == "svg" || elementType == "image") {
     element = document.createElementNS(
       "http://www.w3.org/2000/svg",
       elementType
@@ -29,54 +29,6 @@ function createElemetHtml(elementType, params) {
   }
 
   return element;
-}
-
-// TODO: refactor createButton
-function createButton(id, pathImage) {
-  const button = document.createElement("button");
-  button.classList.add("btn");
-  button.setAttribute("type", "button");
-  button.setAttribute("id", id);
-  button.setAttribute("title", id);
-
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-  svg.setAttribute("viewBox", "0 0 24 24");
-  svg.setAttribute("height", "24");
-  svg.setAttribute("width", "24");
-
-  const image = document.createElementNS("http://www.w3.org/2000/svg", "image");
-  image.setAttribute("href", pathImage);
-  image.setAttribute("width", "24");
-  image.setAttribute("height", "24");
-  image.setAttribute("fill", "currentColor");
-
-  svg.appendChild(image);
-
-  const containerStars = document.createElement("div");
-  containerStars.setAttribute("id", "container-stars");
-
-  const stars = document.createElement("div");
-  stars.setAttribute("id", "stars");
-  containerStars.appendChild(stars);
-
-  const glow = document.createElement("div");
-  glow.setAttribute("id", "glow");
-
-  const circle1 = document.createElement("div");
-  circle1.classList.add("circle");
-  const circle2 = document.createElement("div");
-  circle2.classList.add("circle");
-
-  glow.appendChild(circle1);
-  glow.appendChild(circle2);
-
-  button.appendChild(svg);
-  button.appendChild(containerStars);
-  button.appendChild(glow);
-
-  const btnGroup = document.querySelector(".btn-group");
-  btnGroup.appendChild(button);
 }
 
 function changeCountValue(element, text) {
@@ -115,6 +67,71 @@ function changeCountValue(element, text) {
   }
 }
 
+function createButton(typeButton) {
+  let pathImage;
+  if (typeButton === "reset") {
+    pathImage = "rotate-ccw";
+  } else if (typeButton === "add") {
+    pathImage = "plus";
+  } else {
+    pathImage = typeButton;
+  }
+
+  const svg = createElemetHtml("svg", {
+    attributes: {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      width: "24",
+      height: "24",
+    },
+    childs: createElemetHtml("image", {
+      attributes: {
+        href: "assets/img/".concat(pathImage.concat(".svg")),
+        width: "24",
+        height: "24",
+        fill: "currentColor",
+      },
+    }),
+  });
+
+  const button = createElemetHtml("button", {
+    attributes: {
+      type: "button",
+      id: typeButton,
+      title: typeButton,
+    },
+    classList: "btn",
+    childs: [
+      svg,
+      createElemetHtml("div", {
+        attributes: {
+          id: "container-stars",
+        },
+        childs: [
+          createElemetHtml("div", {
+            attributes: {
+              id: "stars",
+            },
+          }),
+        ],
+      }),
+      createElemetHtml("div", {
+        attributes: {
+          id: "glow",
+        },
+        childs:
+          [
+            createElemetHtml("div", {
+              classList: "circle",
+            }),
+          ] * 2,
+      }),
+    ],
+  });
+
+  return button;
+}
+
 const containerTitle = createElemetHtml("div", {
   classList: "container-title",
   childs: createElemetHtml("span", {
@@ -145,6 +162,12 @@ const sectionBgStars = createElemetHtml("section", {
 
 const quantityDiv = document.querySelector(".quantity");
 
+const buttonAdd = createButton("add");
+
+const buttonMinus = createButton("minus");
+
+const buttonReset = createButton("reset");
+
 const btnGroup = createElemetHtml("div", {
   classList: "btn-group",
   attributes: {
@@ -152,6 +175,8 @@ const btnGroup = createElemetHtml("div", {
     "aria-label": "Basic example",
     id: "btn-group",
   },
+
+  childs: [buttonReset, buttonMinus, buttonAdd],
 });
 
 const container = createElemetHtml("div", {
@@ -160,9 +185,6 @@ const container = createElemetHtml("div", {
 });
 
 document.body.appendChild(container);
-createButton("reset", "assets/img/rotate-ccw.svg");
-createButton("minus", "assets/img/minus.svg");
-createButton("add", "assets/img/plus.svg");
 
 let count = 0;
 let countIncrementBy = 1;
@@ -170,7 +192,6 @@ const value = document.querySelector("#value");
 const incrementBy = document.querySelector("#incrementLabel");
 
 quantityDiv.addEventListener("click", (event) => {
-  console.log(incrementBy.textContent);
   if (event.target.tagName != "BUTTON") {
     if (event.target.tagName === "SVG") {
       changeCountValue(event.target.parentNode, incrementBy);
